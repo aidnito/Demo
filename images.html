@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('Im1/LAX.jpg');
+            background-size: cover; /* Ensure the background image covers the whole screen */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+            background-attachment: fixed; /* Keep the background fixed during scroll */
+            height: 100vh; /* Ensure the body takes the full height of the viewport */
+            width: 100%;
+        }
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .gallery-item {
+            margin: 10px;
+        }
+        .gallery-item img {
+            width: 400px; /* Adjust the size of the images */
+            height: auto;
+        }
+        .back-link {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">
+        <img src="Im1/back.gif" alt="BackHome">
+    </a>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="Im1/RAINBOW.jpg" alt="Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="Im1/INOUT.jpg" alt="Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="Im1/NZ1.jpg" alt="Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="Im1/NZ2.jpg" alt="Photo 4">
+        </div>
+        <div class="gallery-item">
+            <img src="Im1/NZ3.jpg" alt="Photo 5">
+        </div>
+        <div class="gallery-item">
+            <img src="Im1/NZ4.jpg" alt="Photo 5">
+        </div>
+        <div class="gallery-item">
+            <img src="Im1/GTL1.jpg" alt="Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="Im1/GTL2.jpg" alt="Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="Im1/GTL3.jpg" alt="Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="Im1/GTL4.jpg" alt="Photo 4">
+        </div>
+        <div class="gallery-item">
+            <img src="Im1/GTL5.jpg" alt="Photo 5">
+        </div>
+        <div class="gallery-item">
+            <img src="Im1/GTL6.jpg" alt="Photo 5">
+        </div>
+    </div>
+</body>
+</html>
