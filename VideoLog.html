@@ -35,16 +35,24 @@
         /* Adjust dimensions for larger screens */
         @media (min-width: 1024px) {
             iframe {
-                width: 50vw; /* 60% of the viewport width on larger screens */
-                height: 40vw; /* Maintain a 16:9 aspect ratio */
+                width: 50vw; /* 50% of the viewport width on larger screens */
+                height: 28.125vw; /* Maintain a 16:9 aspect ratio */
                 max-height: 60vh; /* Ensure it doesn't exceed 60% of the viewport height */
             }
+        }
+        .back-link {
+            position: fixed; /* Ensure the link is fixed in the viewport */
+            top: 10px; /* Position it 10px from the top */
+            left: 10px; /* Position it 10px from the left */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <iframe src="https://www.youtube.com/embed/ZA0lwiv1b30?si=bTeTFgmzyVBtt0Bg&amp;controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/ZA0lwiv1b30?si=bTeTFgmzyVBtt0Bg&amp;controls=1&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <a href="index.html" class="back-link">
+            <img src="Im1/back.gif" alt="BackHome">
+        </a>
     </div>
 </body>
 </html>
