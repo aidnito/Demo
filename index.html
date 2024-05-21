@@ -35,13 +35,16 @@
             animation: moveUnicorn 90s linear infinite; /* Animation properties */
         }
         .aidan-gif {
-            width: 160px; /* Adjust size as needed */
+            width: 100px; /* Adjust size as needed */
             height: auto;
             position: absolute;
-            top: 25%; /* Adjust top position */
-            left: 25%; /* Adjust left position */
-            animation: floatAidan 4s ease-in-out infinite; /* Animation properties */
         }
+        .page1 { top: 25%; left: 50%; transform: translate(-50%, -50%); }
+        .page2 { top: 35%; left: 35%; transform: translate(-50%, -50%); }
+        .aidan3 { top: 35%; left: 65%; transform: translate(-50%, -50%); }
+        .aidan4 { top: 65%; left: 35%; transform: translate(-50%, -50%); }
+        .aidan5 { top: 65%; left: 65%; transform: translate(-50%, -50%); }
+        .aidan6 { top: 75%; left: 50%; transform: translate(-50%, -50%); }
         @keyframes moveUnicorn {
             0% {
                 left: -150px; /* Start off-screen to the left */
@@ -89,14 +92,6 @@
                 transform: rotate(-360deg); /* Quick rotation to face right */
             }
         }
-        @keyframes floatAidan {
-            0%, 100% {
-                transform: translateY(0); /* Initial position */
-            }
-            50% {
-                transform: translateY(-20px); /* Float up */
-            }
-        }
     </style>
 </head>
 <body>
@@ -106,8 +101,13 @@
         </a>
         <img src="Im1/welight.gif" alt="Welcome" class="Welcome">
         <a href="VideoLog.html">
-            <img src="Im1/AIDAN.gif" alt="AIDAN GIF" class="aidan-gif">
+            <img src="Im1/CAM.gif" alt="CAM GIF" class="aidan-gif page1">
         </a>
+        <img src="Im1/KINDLE.gif" alt="KINDLE GIF" class="aidan-gif page2">
+        <img src="Im1/AIDAN.gif" alt="AIDAN GIF" class="aidan-gif aidan3">
+        <img src="Im1/AIDAN.gif" alt="AIDAN GIF" class="aidan-gif aidan4">
+        <img src="Im1/AIDAN.gif" alt="AIDAN GIF" class="aidan-gif aidan5">
+        <img src="Im1/AIDAN.gif" alt="AIDAN GIF" class="aidan-gif aidan6">
     </div>
 </body>
 </html>
