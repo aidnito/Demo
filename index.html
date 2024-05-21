@@ -33,6 +33,7 @@
             top: 80%; /* Adjust the vertical position */
             left: -150px; /* Start position off-screen to the left */
             animation: moveUnicorn 45s linear infinite; /* Animation properties */
+            cursor: pointer; /* Make it clickable */
         }
         .aidan-gif {
             width: 100px; /* Adjust size as needed */
@@ -102,17 +103,62 @@
                 transform: rotate(-360deg); /* Quick rotation to face right */
             }
         }
+
+        @keyframes fallUnicorn {
+            0% {
+                transform: rotate(0deg); /* Initial position */
+            }
+            100% {
+                top: 110%; /* Move off-screen to the bottom */
+                transform: rotate(-180deg); /* Rotate upside down */
+            }
+        }
+
+        @keyframes fallUnicornLeft {
+            0% {
+                transform: rotate(-90deg); /* Initial position */
+            }
+            100% {
+                top: 110%; /* Move off-screen to the bottom */
+                transform: rotate(-270deg); /* Rotate upside down */
+            }
+        }
+
+        @keyframes fallUnicornUpsideDown {
+            0% {
+                transform: rotate(-180deg); /* Initial position */
+            }
+            100% {
+                top: 110%; /* Move off-screen to the bottom */
+                transform: rotate(-360deg); /* Rotate upside down */
+            }
+        }
+
+        @keyframes fallUnicornRight {
+            0% {
+                transform: rotate(90deg); /* Initial position */
+            }
+            100% {
+                top: 110%; /* Move off-screen to the bottom */
+                transform: rotate(270deg); /* Rotate upside down */
+            }
+        }
+
+
+        .falling {
+            animation: fallUnicorn 2s forwards; /* Falling animation */
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="Im1/Uni1.gif" alt="Unicorn GIF" class="unicorn-gif">
+        <img src="Im1/Uni1.gif" alt="Unicorn GIF" class="unicorn-gif" id="unicorn">
         <img src="Im1/welight.gif" alt="Welcome" class="Welcome">
         <a href="VideoLog.html">
             <img src="Im1/CAM.gif" alt="CAM GIF" class="aidan-gif page1">
         </a>
         <img src="Im1/KINDLE.gif" alt="KINDLE GIF" class="aidan-gif page2">
-        <a href = "images.html">
+        <a href="images.html">
             <img src="Im1/DISPO.gif" alt="DISPO GIF" class="aidan-gif page3">
         </a>
         
@@ -120,5 +166,48 @@
         <img src="Im1/AIDAN.gif" alt="AIDAN GIF" class="aidan-gif aidan5">
         <img src="Im1/AIDAN.gif" alt="AIDAN GIF" class="aidan-gif aidan6">
     </div>
+    <script>
+        const unicorn = document.getElementById('unicorn');
+
+        unicorn.addEventListener('click', () => {
+            // Get the current position and rotation
+            const rect = unicorn.getBoundingClientRect();
+            const top = rect.top;
+            const left = rect.left;
+            const transform = window.getComputedStyle(unicorn).transform;
+
+            // Determine the rotation angle
+            let angle = 0;
+            if (transform !== 'none') {
+                const values = transform.split('(')[1].split(')')[0].split(',');
+                const a = values[0];
+                const b = values[1];
+                angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+            }
+
+            // Set the top and left positions for the falling animation
+            unicorn.style.top = `${top}px`;
+            unicorn.style.left = `${left}px`;
+
+            // Apply the appropriate falling animation based on the current angle
+            if (angle === 0 || angle === -0) {
+                unicorn.style.animation = 'fallUnicorn 2s forwards';
+            } else if (angle === -90 || angle === 270) {
+                unicorn.style.animation = 'fallUnicornLeft 2s forwards';
+            } else if (angle === -180 || angle === 180) {
+                unicorn.style.animation = 'fallUnicornUpsideDown 2s forwards';
+            } else if (angle === 90 || angle === -270) {
+                unicorn.style.animation = 'fallUnicornRight 2s forwards';
+            }
+
+            // Remove the falling animation and reset the original animation after 2 seconds
+            setTimeout(() => {
+                unicorn.style.animation = 'none';
+                unicorn.offsetHeight; /* trigger reflow */
+                unicorn.style.animation = 'moveUnicorn 45s linear infinite';
+            }, 2000);
+        });
+
+    </script>
 </body>
 </html>
