@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <style>
+        body {
+            background-color: #fffdd0;
+            font-family: Arial, sans-serif;
+            color: #000;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            align-items: stretch; /* Ensure the children stretch to the height of the container */
+        }
+
+        .sidebar {
+            background-color: #0000ff;
+            width: 15vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            flex-grow: 1; /* Ensure the sidebar stretches the full height */
+        }
+
+        .content {
+            width: 70vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .banner {
+            width: 70%;
+            margin: 20px 0;
+        }
+
+        .description {
+            width: 80%;
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-family: 'Times New Roman', Times, serif;
+            color: #0000ff;
+        }
+
+        .book-list {
+            width: 70%;
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .book-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #0000ff;
+        }
+
+        .book-item:hover {
+            transform: scale(1.05);
+        }
+
+        .book-image {
+            width: 100px;
+            height: 150px;
+            margin-right: 20px;
+        }
+
+        .book-details {
+            text-align: left;
+        }
+
+        .book-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #0000ff;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .book-author {
+            font-size: 1em;
+            color: #0000ff;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .back-link {
+            position: fixed; /* Ensure the link is fixed in the viewport */
+            top: 10px; /* Position it 10px from the top */
+            left: 10px; /* Position it 10px from the left */
+        }
+
+        #floating-gif {
+            position: absolute;
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            z-index: 1000; /* Ensure it appears above other content */
+        }
+
+        .ad-gif {
+            width: 20vh;
+            height: 25vh;
+            margin: 10px;
+        }
+
+        .bottom-banner {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0; /* Ensure no padding affects the width */
+            margin: 0; /* Ensure no margin affects the width */
+        }
+
+        .bottom-banner img {
+            width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="Im1/ad1.gif" alt="Ad 1" class="ad-gif">
+            <img src="Im1/ad3.gif" alt="Ad 2" class="ad-gif">
+            <img src="Im1/ad6.gif" alt="Ad 6" class="ad-gif">
+            <img src="Im1/ad8.gif" alt="Ad 7" class="ad-gif">
+        </div>
+        <div class="content">
+            <img src="Im1/Banner.png" alt="Banner" class="banner">
+            <div class="description">
+                Alright, chill. This is not a list of the top books I have ever read. That would be too hard to make. Instead, I wanted to share just a few of the titles I have enjoyed. Some I read recently, some a long time ago. I have been trying to branch out more with book selection, and would love some recommendations. Email me to trade book recommendations.
+            </div>
+            <div class="book-list">
+                <div class="book-item">
+                    <img src="Im1/A Little Life.jpg" alt="Book 1" class="book-image">
+                    <div class="book-details">
+                        <div class="book-title">A Little Life</div>
+                        <div class="book-author">Hanya Yanagihara</div>
+                    </div>
+                </div>
+                <div class="book-item">
+                    <img src="Im1/Ender's Game.jpg" alt="Book 2" class="book-image">
+                    <div class="book-details">
+                        <div class="book-title">Ender's Game</div>
+                        <div class="book-author">Orson Scott Card</div>
+                    </div>
+                </div>
+                <div class="book-item">
+                    <img src="Im1/Catcher in the Rye.png" alt="Book 3" class="book-image">
+                    <div class="book-details">
+                        <div class="book-title">The Catcher in the Rye</div>
+                        <div class="book-author">J.D. Salinger</div>
+                    </div>
+                </div>
+                <div class="book-item">
+                    <img src="Im1/Filthy Rich.jpg" alt="Book 4" class="book-image">
+                    <div class="book-details">
+                        <div class="book-title">How to Get Filthy Rich in Rising Asia</div>
+                        <div class="book-author">Mohsin Hamid</div>
+                    </div>
+                </div>
+                <div class="book-item">
+                    <img src="Im1/The Alchemist.jpg" alt="Book 5" class="book-image">
+                    <div class="book-details">
+                        <div class="book-title">The Alchemist</div>
+                        <div class="book-author">Paulo Coelho</div>
+                    </div>
+                </div>
+                <div class="book-item">
+                    <img src="Im1/Old Man and Sea.jpg" alt="Book 6" class="book-image">
+                    <div class="book-details">
+                        <div class="book-title">The Old Man and The Sea</div>
+                        <div class="book-author">Ernest Hemingway</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="index.html" class="back-link">
+            <img src="Im1/back.gif" alt="BackHome">
+        </a>
+        <div class="sidebar">
+            <img src="Im1/ad2.gif" alt="Ad 3" class="ad-gif">
+            <img src="Im1/ad4.gif" alt="Ad 4" class="ad-gif">
+            <img src="Im1/ad5.gif" alt="Ad 5" class="ad-gif">
+            <img src="Im1/ad7.gif" alt="Ad 8" class="ad-gif">
+        </div>
+    </div>
+    <div class="bottom-banner">
+        <img src="Im1/bannerad.gif" alt="Bottom Banner">
+    </div>
+    <a href="mailto:aidan3.chen@gmail.com">
+        <img src="Im1/email.gif" alt="Email GIF" id="floating-gif">
+    </a>
+    <script>
+        // Random float function
+        function floatGIF() {
+            var gif = document.getElementById('floating-gif');
+            var maxX = window.innerWidth - gif.offsetWidth;
+            var maxY = window.innerHeight - gif.offsetHeight;
+            var randomX = Math.floor(Math.random() * maxX);
+            var randomY = Math.floor(Math.random() * maxY);
+            gif.style.left = randomX + 'px';
+            gif.style.top = randomY + 'px';
+        }
+
+        // Initial position
+        floatGIF();
+
+        // Move the GIF every 6 seconds
+        setInterval(floatGIF, 6000);
+    </script>
+</body>
+</html>
