@@ -4,129 +4,190 @@
     <meta charset="UTF-8">
     <title>Books</title>
     <style>
-        body {
-            background-color: #fffdd0;
-            font-family: Arial, sans-serif;
-            color: #000;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+body {
+    background-color: #fffdd0;
+    font-family: Arial, sans-serif;
+    color: #000;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .container {
-            display: flex;
-            width: 100%;
-            min-height: 100vh;
-            align-items: stretch; /* Ensure the children stretch to the height of the container */
-        }
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: stretch; /* Ensure the children stretch to the height of the container */
+}
 
-        .sidebar {
-            background-color: #0000ff;
-            width: 15vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            flex-grow: 1; /* Ensure the sidebar stretches the full height */
-        }
+.sidebar {
+    background-color: #0000ff;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    flex-grow: 1; /* Ensure the sidebar stretches the full height */
+}
 
-        .content {
-            width: 70vw;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 20px;
-        }
+.content {
+    width: 70vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
 
-        .banner {
-            width: 70%;
-            margin: 20px 0;
-        }
+.banner {
+    width: 70%;
+    margin: 20px 0;
+}
 
-        .description {
-            width: 80%;
-            margin: 20px 0;
-            font-size: 1.2em;
-            font-family: 'Times New Roman', Times, serif;
-            color: #0000ff;
-        }
+.description {
+    width: 80%;
+    margin: 20px 0;
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Times, serif;
+    color: #0000ff;
+}
 
-        .book-list {
-            width: 70%;
-            margin: 20px 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
+.book-list {
+    width: 70%;
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
 
-        .book-item {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #0000ff;
-        }
+.book-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #0000ff;
+}
 
-        .book-item:hover {
-            transform: scale(1.05);
-        }
+.book-item:hover {
+    transform: scale(1.05);
+}
 
-        .book-image {
-            width: 100px;
-            height: 150px;
-            margin-right: 20px;
-        }
+.book-image {
+    width: 100px;
+    height: 150px;
+    margin-right: 20px;
+}
 
-        .book-details {
-            text-align: left;
-        }
+.book-details {
+    text-align: left;
+}
 
-        .book-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #0000ff;
-            font-family: 'Times New Roman', Times, serif;
-        }
+.book-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #0000ff;
+    font-family: 'Times New Roman', Times, serif;
+}
 
-        .book-author {
-            font-size: 1em;
-            color: #0000ff;
-            font-family: 'Times New Roman', Times, serif;
-        }
+.book-author {
+    font-size: 1em;
+    color: #0000ff;
+    font-family: 'Times New Roman', Times, serif;
+}
 
-        .back-link {
-            position: fixed; /* Ensure the link is fixed in the viewport */
-            top: 10px; /* Position it 10px from the top */
-            left: 10px; /* Position it 10px from the left */
-        }
+.back-link {
+    position: fixed; /* Ensure the link is fixed in the viewport */
+    top: 10px; /* Position it 10px from the top */
+    left: 10px; /* Position it 10px from the left */
+}
 
-        #floating-gif {
-            position: absolute;
-            width: 100px; /* Adjust as needed */
-            height: 100px; /* Adjust as needed */
-            z-index: 1000; /* Ensure it appears above other content */
-        }
+#floating-gif {
+    position: absolute;
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    z-index: 1000; /* Ensure it appears above other content */
+}
 
-        .ad-gif {
-            width: 20vh;
-            height: 25vh;
-            margin: 10px;
-        }
+.ad-gif {
+    width: 20vh;
+    height: 25vh;
+    margin: 10px;
+}
 
-        .bottom-banner {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 0; /* Ensure no padding affects the width */
-            margin: 0; /* Ensure no margin affects the width */
-        }
+.bottom-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0; /* Ensure no padding affects the width */
+    margin: 0; /* Ensure no margin affects the width */
+}
 
-        .bottom-banner img {
-            width: 100%;
-            height: auto;
-        }
+.bottom-banner img {
+    width: 100%;
+    height: auto;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-grow: 0; /* Reset flex-grow */
+        padding: 10px 0;
+    }
+
+    .content {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .banner {
+        width: 100%;
+    }
+
+    .description {
+        width: 90%;
+        font-size: 1em;
+    }
+
+    .book-list {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .book-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .book-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .book-details {
+        text-align: center;
+    }
+
+    .ad-gif {
+        width: 15vh;
+        height: 20vh;
+        margin: 5px;
+    }
+
+    .bottom-banner img {
+        width: 100%;
+    }
+}
 
     </style>
 </head>
