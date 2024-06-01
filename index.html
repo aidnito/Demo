@@ -27,10 +27,10 @@
             align-items: center;
         }
         .unicorn-gif {
-            width: 150px; /* Set a width if you want to resize */
+            width: 100px; /* Set a width if you want to resize */
             height: auto;
             position: absolute;
-            top: 80%; /* Adjust the vertical position */
+            top: 100%; /* Adjust the vertical position */
             left: -150px; /* Start position off-screen to the left */
             animation: moveUnicorn 45s linear infinite; /* Animation properties */
             cursor: pointer; /* Make it clickable */
@@ -40,45 +40,45 @@
             height: auto;
             position: absolute;
         }
-        .page1 { top: 25%; left: 50%; transform: translate(-50%, -50%); }
+        .page6 { top: 25%; left: 50%; transform: translate(-50%, -50%); }
         .page2 { top: 35%; left: 35%; transform: translate(-50%, -50%); }
         .page3 { top: 35%; left: 65%; transform: translate(-50%, -50%); }
-        .aidan4 { top: 65%; left: 35%; transform: translate(-50%, -50%); }
-        .aidan5 { top: 65%; left: 65%; transform: translate(-50%, -50%); }
-        .aidan6 { top: 75%; left: 50%; transform: translate(-50%, -50%); }
+        .page4 { top: 65%; left: 35%; transform: translate(-50%, -50%); }
+        .page5 { top: 65%; left: 65%; transform: translate(-50%, -50%); }
+        .page1 { top: 75%; left: 50%; transform: translate(-50%, -50%); }
 
         @media (max-width: 768px) {
-            .page1 { top: 20%; left: 50%; transform: translate(-50%, -50%); }
+            .page6 { top: 20%; left: 50%; transform: translate(-50%, -50%); }
             .page2 { top: 30%; left: 20%; transform: translate(-50%, -50%); }
             .page3 { top: 30%; left: 80%; transform: translate(-50%, -50%); }
-            .aidan4 { top: 60%; left: 20%; transform: translate(-50%, -50%); }
-            .aidan5 { top: 60%; left: 80%; transform: translate(-50%, -50%); }
-            .aidan6 { top: 70%; left: 50%; transform: translate(-50%, -50%); }
+            .page4 { top: 60%; left: 20%; transform: translate(-50%, -50%); }
+            .page5 { top: 60%; left: 80%; transform: translate(-50%, -50%); }
+            .page1 { top: 70%; left: 50%; transform: translate(-50%, -50%); }
         }
 
         @keyframes moveUnicorn {
             0% {
                 left: -150px; /* Start off-screen to the left */
-                top: 80%;
+                top: 85%;
                 transform: rotate(0deg); /* Initial position */
             }
             29% {
-                left: calc(100% - 150px); /* Move to the right edge */
-                top: 80%;
+                left: calc(100% - 100px); /* Move to the right edge */
+                top: 85%;
                 transform: rotate(0deg); /* Face right */
             }
             30% {
-                left: calc(100% - 150px); /* Stay on the right edge */
-                top: 80%;
+                left: calc(100% - 100px); /* Stay on the right edge */
+                top: 85%;
                 transform: rotate(-90deg); /* Quick rotation to face up */
             }
             49% {
-                left: calc(100% - 150px); /* Stay on the right edge */
+                left: calc(100% - 100px); /* Stay on the right edge */
                 top: 0%; /* Move to the top edge */
                 transform: rotate(-90deg); /* Face up */
             }
             50% {
-                left: calc(100% - 150px); /* Stay on the right edge */
+                left: calc(100% - 100px); /* Stay on the right edge */
                 top: 0%; /* Stay on the top edge */
                 transform: rotate(-180deg); /* Quick rotation to face left */
             }
@@ -157,14 +157,16 @@
         <a href="VideoLog.html">
             <img src="Im1/CAM.gif" alt="CAM GIF" class="aidan-gif page1">
         </a>
+        <a href="Books.html">
         <img src="Im1/KINDLE.gif" alt="KINDLE GIF" class="aidan-gif page2">
+        </a>
         <a href="images.html">
             <img src="Im1/DISPO.gif" alt="DISPO GIF" class="aidan-gif page3">
         </a>
         
-        <img src="Im1/AIDAN.gif" alt="AIDAN GIF" class="aidan-gif aidan4">
-        <img src="Im1/AIDAN.gif" alt="AIDAN GIF" class="aidan-gif aidan5">
-        <img src="Im1/AIDAN.gif" alt="AIDAN GIF" class="aidan-gif aidan6">
+        <img src="Im1/animal.gif" alt="ANIMAL GIF" class="aidan-gif page4">
+        <img src="Im1/globe.gif" alt="AIDAN GIF" class="aidan-gif page5">
+        <img src="Im1/Aidan1.gif" alt="AIDAN GIF" class="aidan-gif page6">
     </div>
     <script>
         const unicorn = document.getElementById('unicorn');
