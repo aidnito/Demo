@@ -11,7 +11,7 @@
             color: rgb(0, 0, 0);
             text-align: center;
             background-image: url('Im1/moss.jpg'); /* Use relative path */
-            background-position: center;
+            background-position: right center; /* Ensure right side is visible */
             background-size: cover;
             background-attachment: fixed;
             overflow: hidden; /* Prevent scrolling */
@@ -48,6 +48,41 @@
             background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
             overflow-y: auto; /* Allow scrolling if content overflows */
             text-align: left;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            .content {
+                width: 90%;
+                left: 50%;
+            }
+
+            .about-me {
+                width: 100%;
+                height: auto;
+            }
+
+            body {
+                background-position: right center; /* Ensure right side is visible */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                width: 95%;
+                height: auto;
+                top: 60%;
+            }
+
+            .about-me {
+                width: 100%;
+                height: auto;
+                padding: 10px;
+            }
+
+            body {
+                background-position: right center; /* Ensure right side is visible */
+            }
         }
     </style>
 </head>
