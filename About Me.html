@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            background-image: url('Im1/moss.jpg'); /* Use relative path */
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: hidden; /* Prevent scrolling */
+            height: 100vh;
+        }
+
+        .back-link {
+            position: fixed; /* Ensure the link is fixed in the viewport */
+            top: 10px; /* Position it 10px from the top */
+            left: 10px; /* Position it 10px from the left */
+            z-index: 4; /* Ensure it appears above other content */
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            z-index: 2; /* Ensure it appears above the background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 60%;
+        }
+
+        .about-me {
+            width: 50%;
+            height: 100%;
+            padding: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+            border: 2px solid #000;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            overflow-y: auto; /* Allow scrolling if content overflows */
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">
+        <img src="Im1/back.gif" alt="BackHome">
+    </a>
+    <div class="content">
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>Hello! I'm [Your Name], a passionate web developer and designer.</p>
+            <p>I love creating visually appealing and user-friendly websites.</p>
+            <p>In my free time, I enjoy hiking, photography, and exploring new technologies.</p>
+            <p>Feel free to contact me for any web development projects or collaborations.</p>
+            <!-- Add more points about yourself here -->
+        </div>
+    </div>
+</body>
+</html>
