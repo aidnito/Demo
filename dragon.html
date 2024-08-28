@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoLog</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            background-image: url('Im1/dragonbg.jpg'); /* Use relative path */
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: hidden; /* Prevent scrolling */
+            height: 100vh; /* Ensure body fills the viewport height */
+        }
+        .container {
+            position: relative;
+            height: 100vh; /* Ensure it covers the viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center;
+        }
+        .back-link {
+            position: fixed; /* Ensure the link is fixed in the viewport */
+            top: 10px; /* Position it 10px from the top */
+            left: 10px; /* Position it 10px from the left */
+        }
+        .back-link img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <img src="Im1/back.gif" alt="BackHome">
+        </a>
+    </div>
+</body>
+</html>

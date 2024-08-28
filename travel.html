@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Map</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #87CEEB; /* Sky blue background */
+        }
+        .map-container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+        }
+        .back-link {
+            position: fixed; /* Fixed in the viewport */
+            top: 10px; /* 10px from the top */
+            left: 10px; /* 10px from the left */
+        }
+        .back-link img {
+            width: 100px;
+        }
+        .plane {
+            position: fixed;
+            width: 100px;
+            top: 50%; /* Start in the middle vertically */
+            left: -5%;
+            animation: flyPlane 45s linear infinite;
+        }
+        @keyframes flyPlane {
+            0% {
+                transform: translateX(0px) translateY(0px) rotate(0deg); /* Start out of frame on the left */
+            }
+            20% {
+                transform: translateX(20vw) translateY(80px) rotate(90deg); /* Slight upward loop */
+            }
+            25% {
+                transform: translateX(25vw) translateY(45px) rotate(180deg); /* Slight upward loop */
+            }
+            30% {
+                transform: translateX(30vw) translateY(10px) rotate(270deg); /* Slight upward loop */
+            }
+            40% {
+                transform: translateX(40vw) translateY(50px) rotate(360deg); /* Slight downward loop */
+            }
+            60% {
+                transform: translateX(60vw) translateY(-69px) rotate(10deg); /* Another slight upward loop */
+            }
+            80% {
+                transform: translateX(80vw) translateY(-40px) rotate(-10deg); /* Gentle descent */
+            }
+            100% {
+                transform: translateX(110vw) translateY(0px) rotate(0deg); /* End out of frame on the right */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/d/embed?mid=1J8XBANZuwuxxL87ercGgTzEmTavzVc4&ehbc=2E312F&noprof=1&z=3&ll=33.7490,-84.3880" 
+            style="border:0" 
+            allowfullscreen>
+        </iframe>
+
+        <a href="index.html" class="back-link">
+            <img src="Im1/back.gif" alt="BackHome">
+        </a>
+    </div>
+
+    <!-- Flying plane -->
+    <img src="Im1/plane.gif" alt="Flying Plane" class="plane">
+</body>
+</html>
