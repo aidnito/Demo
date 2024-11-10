@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1yr</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            background-image: url('Im1/bgheart.png'); /* Use relative path */
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: auto; /* Prevent scrolling */
+            height: 100vh; /* Ensure body fills the viewport height */
+        }
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center;
+        }
+        iframe {
+            width: 80vw; /* 80% of the viewport width */
+            height: 45vw; /* Maintain a 16:9 aspect ratio */
+            max-width: 80%; /* Ensure it doesn't exceed 80% of the container */
+            max-height: 45vh; /* Ensure it doesn't exceed 45% of the viewport height */
+        }
+        .gallery-container {
+            width: 33vw; /* 33% of the viewport width */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            padding: 20px;
+            margin: 0 auto; /* Center the container itself */
+        }
+        .gallery-item {
+            width: 100%; /* Full width within the gallery container */
+            margin: 10px 0; /* Spacing between items */
+        }
+        .gallery-item img {
+            width: 100%; /* Full width of gallery item */
+        }
+        .back-link {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+        .back-link img {
+            width: 100%;
+        }
+        .letter-link {
+            position: fixed;
+            top: 60vh;
+            left: 72vw;
+        }
+        .letter-link img {
+            width: 100px;
+        }
+        .vid-link {
+            position: fixed;
+            top: 48vh;
+            right: 68vw;
+        }
+        .vid-link img {
+            width: 80%;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            position: absolute;
+            margin: 10% auto;
+            width: 60%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        /* Early 2000s Retro Style for Letter Modal */
+        .retro-style {
+            background-color: #f5f5dc; /* Cream background */
+            font-family: 'Comic Sans MS', Verdana, sans-serif; /* Nostalgic fonts */
+            color: #000; /* Black text */
+            padding: 20px;
+            border: 5px solid #6b0080; /* Navy border */
+            text-align: left;
+            position: relative;
+        }
+        .retro-style h2 {
+            color: #8b0000;
+            font-size: 1.5em;
+        }
+        .retro-style p {
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+        .retro-style .modal-close {
+            background-color: #bfbfbf;
+            border: 2px solid #000;
+            padding: 5px 15px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .retro-style .modal-close:hover {
+            background-color: #dc143c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <a href="index.html" class="back-link">
+            <img src="Im1/back.gif" alt="BackHome">
+        </a>
+
+        <!-- Letter Modal Link -->
+        <a href="#" class="letter-link" onclick="openLetterModal()">
+            <img src="Im1/letter.gif" alt="Letter">
+        </a>
+
+        <!-- Video Modal Link -->
+        <a href="#" class="vid-link" onclick="openVideoModal()">
+            <img src="Im1/p7.gif" alt="Video">
+        </a>
+
+        <!-- Image Gallery -->
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="Im1/p1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="Im1/p2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="Im1/p3.jpg" alt="Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="Im1/p4.jpg" alt="Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="Im1/p5.jpg" alt="Image 5">
+            </div>
+        </div>
+    </div>
+
+    <!-- Letter Modal -->
+    <div class="modal" id="letterModal">
+        <div class="modal-content retro-style">
+            <button class="modal-close" onclick="closeLetterModal()">Close</button>
+            <h2><blink>Dear Phoebe,</blink></h2>
+            <p>This past year has meant the world to me.</p>
+            <p>The smiles, laughter, animal noises, dancing, eating, early mornings, late nights, car rides, flights, walks on the beach, trips to Cookout - anything and everything about you makes me feel lucky to call you mine.</p>
+            <p>Here's to many more years of joy growth together.</p>
+            <p>With love,</p>
+            <p><strong>Aidan</strong></p>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content retro-style">
+            <button class="modal-close" onclick="closeVideoModal()">Close</button>
+            <iframe src="https://www.youtube.com/embed/jg5uN75ke1s?si=sgrLUaC_3RSGCWhB" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Open Letter Modal
+        function openLetterModal() {
+            document.getElementById('letterModal').style.display = 'block';
+        }
+        function closeLetterModal() {
+            document.getElementById('letterModal').style.display = 'none';
+        }
+
+        // Open Video Modal
+        function openVideoModal() {
+            document.getElementById('videoModal').style.display = 'block';
+        }
+        function closeVideoModal() {
+            document.getElementById('videoModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

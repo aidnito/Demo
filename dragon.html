@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VideoLog</title>
+    <title>Dragon</title>
     <style>
         body {
             margin: 0;
@@ -32,7 +32,16 @@
             left: 10px; /* Position it 10px from the left */
         }
         .back-link img {
-            width: 100px;
+            width: 100%;
+        }
+        .rose-link {
+            position: fixed; /* Ensure the link is fixed in the viewport */
+            bottom: 10px; /* Position it 10px from the bottom */
+            right: 10px; /* Position it 10px from the right */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+        .rose-link img {
+            width: 50px;
         }
     </style>
 </head>
@@ -41,6 +50,22 @@
         <a href="index.html" class="back-link">
             <img src="Im1/back.gif" alt="BackHome">
         </a>
+        <div class="rose-link" onclick="checkPassword()">
+            <img src="Im1/rose.png" alt="Rose">
+        </div>
     </div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "pizza"; // Set your desired password here
+            const userPassword = prompt("Enter the password:");
+
+            if (userPassword === correctPassword) {
+                window.location.href = "1yr.html"; // Redirect if password is correct
+            } else if (userPassword !== null) {
+                alert("Incorrect password. Try again.");
+            }
+        }
+    </script>
 </body>
 </html>

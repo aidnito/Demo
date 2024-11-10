@@ -32,39 +32,22 @@
             left: 10px; /* 10px from the left */
         }
         .back-link img {
-            width: 100px;
+            width: 100%;
         }
         .plane {
             position: fixed;
             width: 100px;
-            top: 50%; /* Start in the middle vertically */
+            top: 0%; /* Start in the middle vertically */
             left: -5%;
             animation: flyPlane 45s linear infinite;
         }
         @keyframes flyPlane {
             0% {
-                transform: translateX(0px) translateY(0px) rotate(0deg); /* Start out of frame on the left */
+                transform: translateX(0px) translateY(0vh) rotate(0deg); /* Start out of frame on the left */
             }
-            20% {
-                transform: translateX(20vw) translateY(80px) rotate(90deg); /* Slight upward loop */
-            }
-            25% {
-                transform: translateX(25vw) translateY(45px) rotate(180deg); /* Slight upward loop */
-            }
-            30% {
-                transform: translateX(30vw) translateY(10px) rotate(270deg); /* Slight upward loop */
-            }
-            40% {
-                transform: translateX(40vw) translateY(50px) rotate(360deg); /* Slight downward loop */
-            }
-            60% {
-                transform: translateX(60vw) translateY(-69px) rotate(10deg); /* Another slight upward loop */
-            }
-            80% {
-                transform: translateX(80vw) translateY(-40px) rotate(-10deg); /* Gentle descent */
-            }
+
             100% {
-                transform: translateX(110vw) translateY(0px) rotate(0deg); /* End out of frame on the right */
+                transform: translateX(100vw) translateY(600px) rotate(0deg); /* End out of frame on the right */
             }
         }
     </style>
@@ -72,7 +55,7 @@
 <body>
     <div class="map-container">
         <iframe 
-            src="https://www.google.com/maps/d/embed?mid=1J8XBANZuwuxxL87ercGgTzEmTavzVc4&ehbc=2E312F&noprof=1&z=3&ll=33.7490,-84.3880" 
+            src="https://www.google.com/maps/d/embed?mid=1J8XBANZuwuxxL87ercGgTzEmTavzVc4&ehbc=2E312F&noprof=1&z=2&ll=33.7490,-84.3880" 
             style="border:0" 
             allowfullscreen>
         </iframe>
